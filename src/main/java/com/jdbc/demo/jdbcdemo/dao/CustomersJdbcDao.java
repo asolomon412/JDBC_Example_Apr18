@@ -26,21 +26,21 @@ public class CustomersJdbcDao {
 
 
 	public int insertCustomer(String id, String compName, String contName, String contTitle, String phone) {
-		// Customers newCust = new Customers(id, compName, contName, contTitle, phone);
+		
 		String insertQuery = "INSERT INTO customers(CompanyName, ContactTitle, ContactName, CustomerID, phone) values (?,?,?,?,?)";
 
 		return jdbcTemplate.update(insertQuery, compName, contTitle, contName, id, phone);
 	}
 
 	public int updateCustomer(String id, String contName) {
-		// Customers newCust = new Customers(id, compName, contName, contTitle, phone);
+		
 		String insertQuery = "UPDATE customers set contactName=? WHERE customerID = ?";
 
 		return jdbcTemplate.update(insertQuery, contName, id);
 	}
 
 	public int deleteCustomer(String id) {
-		// Customers newCust = new Customers(id, compName, contName, contTitle, phone);
+		
 		String insertQuery = "DELETE from customers WHERE customerID = ?";
 
 		return jdbcTemplate.update(insertQuery, id);
